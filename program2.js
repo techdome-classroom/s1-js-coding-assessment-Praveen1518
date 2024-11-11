@@ -1,7 +1,8 @@
-const decodeTheRing = function (s, p) {
+const decodeTheRing = function(s, p) {
+    p = p.split('?').join('.');
+    p = p.split('*').join('.*');
+    const regex = new RegExp(`^${p}$`);
+    return regex.test(s);
+};
 
-    // write your code here
-
-  };
-  
-  module.exports = decodeTheRing;
+module.exports = decodeTheRing;
